@@ -1,0 +1,30 @@
+Date:
+calendar.png
+
+Uptime:
+clock.png !
+
+RAM:
+chip.png
+
+Mydocs:
+hard-disk.png !
+memory-card.png
+
+Battery:
+battery-1.png (<25%)
+battery-2.png (>25%)
+battery-3.png (>50%)
+battery-4.png (>75%)
+(depending on loading state)
+
+usb:
+usb.png
+
+wall charger:
+plug.png
+
+
+Load:
+gear.png
+ 

@@ -1,0 +1,113 @@
+<QtHelpProject version="1.0">
+  <namespace>org.admiral0.lpsmagic</namespace>
+  <virtualFolder>doc</virtualFolder>
+  <filterSection>
+    <filterAttribute>doxygen</filterAttribute>
+    <toc>
+      <section title="lpsmagic" ref="index.html">
+        <section title="Class List" ref="annotated.html">
+          <section title="LpsMagic" ref="classLpsMagic.html" />
+          <section title="Renderer" ref="classRenderer.html" />
+          <section title="RendererInterface" ref="classRendererInterface.html" />
+          <section title="RendererManager" ref="classRendererManager.html" />
+          <section title="RenderUtil" ref="classRenderUtil.html" />
+        </section>
+        <section title="Class Index" ref="classes.html" />
+        <section title="Class Members" ref="functions.html" />
+        <section title="File List" ref="files.html">
+          <section title="lpsmagic.h" />
+          <section title="renderer.h" />
+          <section title="rendererinterface.h" />
+          <section title="renderermanager.h" />
+          <section title="renderutil.h" />
+        </section>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="LpsMagic" id="LpsMagic" ref="classLpsMagic.html" />
+      <keyword name="render" id="LpsMagic::render" ref="classLpsMagic.html#a6e5cfcb4a9001e0f6147554bccb27166" />
+      <keyword name="renderFile" id="LpsMagic::renderFile" ref="classLpsMagic.html#a360d9ccbc18fdb4ea64411a2749daced" />
+      <keyword name="LpsMagic" id="LpsMagic::LpsMagic" ref="classLpsMagic.html#a4feebb734e1cb09af2a12cd240fa79f8" />
+      <keyword name="getSettings" id="LpsMagic::getSettings" ref="classLpsMagic.html#acb88975f264f42b65851c16245c855be" />
+      <keyword name="oneshot" id="LpsMagic::oneshot" ref="classLpsMagic.html#abe89170e927f7abd939de666578d8e61" />
+      <keyword name="Renderer" id="Renderer" ref="classRenderer.html" />
+      <keyword name="infoAvailable" id="Renderer::infoAvailable" ref="classRenderer.html#a7856138383e97e4ac7fd8964f5592ec6" />
+      <keyword name="init" id="Renderer::init" ref="classRenderer.html#a8a0e8a6de51d4640e5ff760f5fc1b9bc" />
+      <keyword name="render" id="Renderer::render" ref="classRenderer.html#a13786dda94a49c5f255d6b693b500687" />
+      <keyword name="brief" id="Renderer::brief" ref="classRenderer.html#a6a57c2e7dfa9ae4ad272a6f61234c5b3" />
+      <keyword name="getMaxSize" id="Renderer::getMaxSize" ref="classRenderer.html#a479c62b6f7349983bfe8d878f81ac3ea" />
+      <keyword name="author" id="Renderer::author" ref="classRenderer.html#a41eb4d0d51f89814b0e31b1008c40c10" />
+      <keyword name="info" id="Renderer::info" ref="classRenderer.html#a9cb0bfa4fe0dd943c18b642d7f530e56" />
+      <keyword name="icon" id="Renderer::icon" ref="classRenderer.html#a33e7b24d62656bbe483ff6c092cc0298" />
+      <keyword name="RendererInterface" id="RendererInterface" ref="classRendererInterface.html" />
+      <keyword name="~RendererInterface" id="RendererInterface::~RendererInterface" ref="classRendererInterface.html#a1dfa67d2c714f8c66759ab677569a750" />
+      <keyword name="init" id="RendererInterface::init" ref="classRendererInterface.html#a30013f18e503aebeef720e046e7ff8a5" />
+      <keyword name="renderers" id="RendererInterface::renderers" ref="classRendererInterface.html#acbae1414227a5cece7fc6f3f514bdb20" />
+      <keyword name="RendererManager" id="RendererManager" ref="classRendererManager.html" />
+      <keyword name="renderPrefix" id="RendererManager::renderPrefix" ref="classRendererManager.html#a0e1583d8e697750bde319965217516e1" />
+      <keyword name="render" id="RendererManager::render" ref="classRendererManager.html#af6ac3aae69f06f316c933cea36a2023e" />
+      <keyword name="instance" id="RendererManager::instance" ref="classRendererManager.html#ac924887f22b24c7625a9bc8e6bf0ab43" />
+      <keyword name="registerRenderer" id="RendererManager::registerRenderer" ref="classRendererManager.html#a6b2ff8605201c19af0619790632195cc" />
+      <keyword name="registerRenderer" id="RendererManager::registerRenderer" ref="classRendererManager.html#ae4d294c2d7a7e7e9e959aaf5dbe080a3" />
+      <keyword name="defaultFont" id="RendererManager::defaultFont" ref="classRendererManager.html#a1125de78f39079a019c4240615a402a5" />
+      <keyword name="foreground" id="RendererManager::foreground" ref="classRendererManager.html#a81a7c68439fc4a558c537bda422a31f9" />
+      <keyword name="background" id="RendererManager::background" ref="classRendererManager.html#ab84b4d4ac26799c820ead5385d36dc5b" />
+      <keyword name="tickless" id="RendererManager::tickless" ref="classRendererManager.html#ae3ec1d6d336fc58b483b231b098bf640" />
+      <keyword name="horizontalSpacing" id="RendererManager::horizontalSpacing" ref="classRendererManager.html#a19ba613b59633b6d53b38cfd0ba01c30" />
+      <keyword name="verticalSpacing" id="RendererManager::verticalSpacing" ref="classRendererManager.html#a9b0dc0d93b9b23682a4b514e71db24af" />
+      <keyword name="RenderUtil" id="RenderUtil" ref="classRenderUtil.html" />
+      <keyword name="drawIcon" id="RenderUtil::drawIcon" ref="classRenderUtil.html#ac4e208597da2e9b3e0503af145d790d4" />
+      <keyword name="drawIcon" id="RenderUtil::drawIcon" ref="classRenderUtil.html#a11d403be3b77b73f28d7cab242a34390" />
+      <keyword name="lineHeight" id="RenderUtil::lineHeight" ref="classRenderUtil.html#a4bc2beebe6bf0009f1d22f53ef0c88dc" />
+      <keyword name="contentLineHeight" id="RenderUtil::contentLineHeight" ref="classRenderUtil.html#ae0406fb5d1905243218147ec3dc05cc6" />
+      <keyword name="expectedTextWidth" id="RenderUtil::expectedTextWidth" ref="classRenderUtil.html#a9f3342e7a3319ac24796b2f7cb849cb8" />
+      <keyword name="parseToken" id="RenderUtil::parseToken" ref="classRenderUtil.html#aff193438ccf137d2cb3abf8134a7a28e" />
+      <keyword name="baseline" id="RenderUtil::baseline" ref="classRenderUtil.html#ad100ab8af0b6cb1287482cd2de9247b6" />
+      <keyword name="resource" id="RenderUtil::resource" ref="classRenderUtil.html#a6f6d1bc0464ea829801e01f178a965dc" />
+      <keyword name="systemIcon" id="RenderUtil::systemIcon" ref="classRenderUtil.html#abf53b2965107b8591da2ddc310317d50" />
+      <keyword name="fillImage" id="RenderUtil::fillImage" ref="classRenderUtil.html#a98ef2e5d1557bafdb59079fe536c75f7" />
+    </keywords>
+    <files>
+      <file>tabs.css</file>
+      <file>tab_a.png</file>
+      <file>tab_b.png</file>
+      <file>tab_h.png</file>
+      <file>tab_s.png</file>
+      <file>nav_h.png</file>
+      <file>nav_f.png</file>
+      <file>bc_s.png</file>
+      <file>doxygen.png</file>
+      <file>closed.png</file>
+      <file>open.png</file>
+      <file>doxygen.css</file>
+      <file>/search/mag_sel.png</file>
+      <file>/search/search_l.png</file>
+      <file>/search/search_m.png</file>
+      <file>/search/search_r.png</file>
+      <file>/search/close.png</file>
+      <file>search/search.css</file>
+      <file>search/search.js</file>
+      <file>index.html</file>
+      <file>lpsmagic_8h_source.html</file>
+      <file>renderer_8h_source.html</file>
+      <file>rendererinterface_8h_source.html</file>
+      <file>renderermanager_8h_source.html</file>
+      <file>renderutil_8h_source.html</file>
+      <file>annotated.html</file>
+      <file>classes.html</file>
+      <file>functions.html</file>
+      <file>functions_func.html</file>
+      <file>classLpsMagic.html</file>
+      <file>classLpsMagic-members.html</file>
+      <file>classRenderer.html</file>
+      <file>classRenderer-members.html</file>
+      <file>classRendererInterface.html</file>
+      <file>classRendererInterface-members.html</file>
+      <file>classRendererManager.html</file>
+      <file>classRendererManager-members.html</file>
+      <file>classRenderUtil.html</file>
+      <file>classRenderUtil-members.html</file>
+      <file>files.html</file>
+    </files>
+  </filterSection>
+</QtHelpProject>

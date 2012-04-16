@@ -1,0 +1,13 @@
+Source: lpsmagic
+Section: user/Other
+Priority: extra
+Maintainer: Radu Andries <admiral0@chakra-project.org>
+Build-Depends: debhelper (>= 7), dpatch, libqt4-dev, libgconf2-dev, libqmsystem2-dev
+Standards-Version: 3.8.4
+Homepage: blog.admiral0.org
+
+Package: lpsmagic
+Architecture: any
+Depends: libqmsystem2,libqt4-core,libqt4-gui,libgconf2-6, ${shlibs:Depends}, ${misc:Depends}
+Description: Custom low power info
+ This program generates and sets custom logo in low power screen. Uses various system info.

@@ -1,0 +1,55 @@
+\hypertarget{classRendererInterface}{
+\section{\-Renderer\-Interface \-Class \-Reference}
+\label{classRendererInterface}\index{\-Renderer\-Interface@{\-Renderer\-Interface}}
+}
+
+
+\-Library ($\ast$.so) interface.  
+
+
+
+
+{\ttfamily \#include $<$rendererinterface.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRendererInterface_a1dfa67d2c714f8c66759ab677569a750}{
+virtual \hyperlink{classRendererInterface_a1dfa67d2c714f8c66759ab677569a750}{$\sim$\-Renderer\-Interface} ()}
+\label{classRendererInterface_a1dfa67d2c714f8c66759ab677569a750}
+
+\begin{DoxyCompactList}\small\item\em \-Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classRendererInterface_a30013f18e503aebeef720e046e7ff8a5}{init} () const =0
+\begin{DoxyCompactList}\small\item\em \-Library initialization code. \end{DoxyCompactList}\item 
+\hypertarget{classRendererInterface_acbae1414227a5cece7fc6f3f514bdb20}{
+virtual \-Q\-List$<$ \hyperlink{classRenderer}{\-Renderer} $\ast$ $>$ \hyperlink{classRendererInterface_acbae1414227a5cece7fc6f3f514bdb20}{renderers} () const =0}
+\label{classRendererInterface_acbae1414227a5cece7fc6f3f514bdb20}
+
+\begin{DoxyCompactList}\small\item\em list of all renderers in this library \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Library ($\ast$.so) interface. 
+
+\-All child classes should also inherit \-Q\-Object 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classRendererInterface_a30013f18e503aebeef720e046e7ff8a5}{
+\index{\-Renderer\-Interface@{\-Renderer\-Interface}!init@{init}}
+\index{init@{init}!RendererInterface@{\-Renderer\-Interface}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void \-Renderer\-Interface\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classRendererInterface_a30013f18e503aebeef720e046e7ff8a5}
+
+
+\-Library initialization code. 
+
+\-This is called after a library is loaded by \-Q\-Plugin\-Loader\par
+ \-You should initialize and register all your renderers in this method. 
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+rendererinterface.\-h\end{DoxyCompactItemize}

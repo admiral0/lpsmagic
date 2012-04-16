@@ -1,0 +1,151 @@
+\hypertarget{classRenderer}{
+\section{\-Renderer \-Class \-Reference}
+\label{classRenderer}\index{\-Renderer@{\-Renderer}}
+}
+
+
+\-Plugins should extend this.  
+
+
+
+
+{\ttfamily \#include $<$renderer.\-h$>$}
+
+\subsection*{\-Signals}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRenderer_a7856138383e97e4ac7fd8964f5592ec6}{
+void {\bfseries info\-Available} ()}
+\label{classRenderer_a7856138383e97e4ac7fd8964f5592ec6}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRenderer_a8a0e8a6de51d4640e5ff760f5fc1b9bc}{init} ()
+\begin{DoxyCompactList}\small\item\em \-Initialization. \end{DoxyCompactList}\item 
+virtual \-Q\-Image $\ast$ \hyperlink{classRenderer_a13786dda94a49c5f255d6b693b500687}{render} (\-Q\-String prefix)
+\begin{DoxyCompactList}\small\item\em draw info on self \end{DoxyCompactList}\item 
+virtual \-Q\-String \hyperlink{classRenderer_a6a57c2e7dfa9ae4ad272a6f61234c5b3}{brief} (\-Q\-String prefix)
+\begin{DoxyCompactList}\small\item\em \-Get description of prefix info. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classRenderer_a479c62b6f7349983bfe8d878f81ac3ea}{get\-Max\-Size} (\-Q\-String prefix)
+\begin{DoxyCompactList}\small\item\em \-Get an estimate of worst case scenario. \end{DoxyCompactList}\item 
+virtual \-Q\-String \hyperlink{classRenderer_a41eb4d0d51f89814b0e31b1008c40c10}{author} ()
+\begin{DoxyCompactList}\small\item\em \-One line info about author. \end{DoxyCompactList}\item 
+\hypertarget{classRenderer_a9cb0bfa4fe0dd943c18b642d7f530e56}{
+virtual \-Q\-String \hyperlink{classRenderer_a9cb0bfa4fe0dd943c18b642d7f530e56}{info} ()}
+\label{classRenderer_a9cb0bfa4fe0dd943c18b642d7f530e56}
+
+\begin{DoxyCompactList}\small\item\em \-Plugin description. \end{DoxyCompactList}\item 
+virtual \-Q\-Image \hyperlink{classRenderer_a33e7b24d62656bbe483ff6c092cc0298}{icon} ()
+\begin{DoxyCompactList}\small\item\em \-Icon for the plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Plugins should extend this. 
+
+\-This is a pure virtual class\par
+ \-All plugins $\ast$must$\ast$ register themselves with \hyperlink{classRendererManager}{\-Renderer\-Manager} in \hyperlink{classRenderer_a8a0e8a6de51d4640e5ff760f5fc1b9bc}{init()}. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classRenderer_a41eb4d0d51f89814b0e31b1008c40c10}{
+\index{\-Renderer@{\-Renderer}!author@{author}}
+\index{author@{author}!Renderer@{\-Renderer}}
+\subsubsection[{author}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-String \-Renderer\-::author (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classRenderer_a41eb4d0d51f89814b0e31b1008c40c10}
+
+
+\-One line info about author. 
+
+\-This method should return author name and email \begin{DoxyNote}{\-Note}
+used in the \-G\-U\-I 
+\end{DoxyNote}
+\hypertarget{classRenderer_a6a57c2e7dfa9ae4ad272a6f61234c5b3}{
+\index{\-Renderer@{\-Renderer}!brief@{brief}}
+\index{brief@{brief}!Renderer@{\-Renderer}}
+\subsubsection[{brief}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-String \-Renderer\-::brief (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{prefix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classRenderer_a6a57c2e7dfa9ae4ad272a6f61234c5b3}
+
+
+\-Get description of prefix info. 
+
+\begin{DoxyNote}{\-Note}
+\-Used by \-G\-U\-I to display info about token 
+\end{DoxyNote}
+\hypertarget{classRenderer_a479c62b6f7349983bfe8d878f81ac3ea}{
+\index{\-Renderer@{\-Renderer}!get\-Max\-Size@{get\-Max\-Size}}
+\index{get\-Max\-Size@{get\-Max\-Size}!Renderer@{\-Renderer}}
+\subsubsection[{get\-Max\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual int \-Renderer\-::get\-Max\-Size (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{prefix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classRenderer_a479c62b6f7349983bfe8d878f81ac3ea}
+
+
+\-Get an estimate of worst case scenario. 
+
+\begin{DoxyNote}{\-Note}
+\-Used by the \-G\-U\-I 
+\end{DoxyNote}
+\hypertarget{classRenderer_a33e7b24d62656bbe483ff6c092cc0298}{
+\index{\-Renderer@{\-Renderer}!icon@{icon}}
+\index{icon@{icon}!Renderer@{\-Renderer}}
+\subsubsection[{icon}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-Image \-Renderer\-::icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classRenderer_a33e7b24d62656bbe483ff6c092cc0298}
+
+
+\-Icon for the plugin. 
+
+\begin{DoxyNote}{\-Note}
+\-If empty default will be used 
+\end{DoxyNote}
+\hypertarget{classRenderer_a8a0e8a6de51d4640e5ff760f5fc1b9bc}{
+\index{\-Renderer@{\-Renderer}!init@{init}}
+\index{init@{init}!Renderer@{\-Renderer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void \-Renderer\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classRenderer_a8a0e8a6de51d4640e5ff760f5fc1b9bc}
+
+
+\-Initialization. 
+
+\-Usually you initialize your plugin here. \hypertarget{classRenderer_a13786dda94a49c5f255d6b693b500687}{
+\index{\-Renderer@{\-Renderer}!render@{render}}
+\index{render@{render}!Renderer@{\-Renderer}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}virtual \-Q\-Image$\ast$ \-Renderer\-::render (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{prefix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classRenderer_a13786dda94a49c5f255d6b693b500687}
+
+
+draw info on self 
+
+\-Prefixes can accept arguments. \-Examples\-:\par
+ {\ttfamily \%w\-Ip} -\/ \-No arguments\par
+ {\ttfamily \%w\-Ip\{arg0\}} -\/ one argument\par
+ {\ttfamily \%w\-Ip\{arg0\}\{arg1\}} -\/ 2 arguments\par
+ \-For receiving these strings plugin should register itself \begin{DoxyItemize}
+\item prefix \-A renderer can handle multiple data for displaying \end{DoxyItemize}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+renderer.\-h\end{DoxyCompactItemize}

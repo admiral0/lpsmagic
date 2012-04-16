@@ -1,0 +1,156 @@
+\hypertarget{classRenderUtil}{
+\section{\-Render\-Util \-Class \-Reference}
+\label{classRenderUtil}\index{\-Render\-Util@{\-Render\-Util}}
+}
+
+
+\-Utility class for drawing \-This class contains functions useful for drawing various parts for info widgets.  
+
+
+
+
+{\ttfamily \#include $<$renderutil.\-h$>$}
+
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classRenderUtil_ac4e208597da2e9b3e0503af145d790d4}{draw\-Icon} (\-Q\-String path, \-Q\-Image $\ast$image, \-Q\-Point point=\-Q\-Point(), \-Q\-Size size=\-Q\-Size())
+\begin{DoxyCompactList}\small\item\em \-Draws single icon on the image \-If point nor size are not specified image is drawn in point (0,0) with its 100\% size. \end{DoxyCompactList}\item 
+static bool \hyperlink{classRenderUtil_a11d403be3b77b73f28d7cab242a34390}{draw\-Icon} (\-Q\-Image icon, \-Q\-Image $\ast$image, \-Q\-Point point=\-Q\-Point(), \-Q\-Size size=\-Q\-Size())
+\begin{DoxyCompactList}\small\item\em \-Draws single icon on the image \-If point nor size are not specified image is drawn in point (0,0) with its 100\% size. \end{DoxyCompactList}\item 
+\hypertarget{classRenderUtil_a4bc2beebe6bf0009f1d22f53ef0c88dc}{
+static int \hyperlink{classRenderUtil_a4bc2beebe6bf0009f1d22f53ef0c88dc}{line\-Height} ()}
+\label{classRenderUtil_a4bc2beebe6bf0009f1d22f53ef0c88dc}
+
+\begin{DoxyCompactList}\small\item\em \-Line height calculated from font metrics. \end{DoxyCompactList}\item 
+\hypertarget{classRenderUtil_ae0406fb5d1905243218147ec3dc05cc6}{
+static int \hyperlink{classRenderUtil_ae0406fb5d1905243218147ec3dc05cc6}{content\-Line\-Height} ()}
+\label{classRenderUtil_ae0406fb5d1905243218147ec3dc05cc6}
+
+\begin{DoxyCompactList}\small\item\em \-Content should not exceed this height. \end{DoxyCompactList}\item 
+\hypertarget{classRenderUtil_a9f3342e7a3319ac24796b2f7cb849cb8}{
+static int \hyperlink{classRenderUtil_a9f3342e7a3319ac24796b2f7cb849cb8}{expected\-Text\-Width} (\-Q\-String text)}
+\label{classRenderUtil_a9f3342e7a3319ac24796b2f7cb849cb8}
+
+\begin{DoxyCompactList}\small\item\em \-Approximate width in pixels to display text. \end{DoxyCompactList}\item 
+static \-Q\-String\-List \hyperlink{classRenderUtil_aff193438ccf137d2cb3abf8134a7a28e}{parse\-Token} (\-Q\-String token)
+\begin{DoxyCompactList}\small\item\em \-Parse a token and return a list of params. \end{DoxyCompactList}\item 
+static int \hyperlink{classRenderUtil_ad100ab8af0b6cb1287482cd2de9247b6}{baseline} ()
+\begin{DoxyCompactList}\small\item\em \-Gets y offset for the baseline of default font. \end{DoxyCompactList}\item 
+static \-Q\-String \hyperlink{classRenderUtil_a6f6d1bc0464ea829801e01f178a965dc}{resource} (\-Q\-String name)
+\begin{DoxyCompactList}\small\item\em \-Gets absolute path of a resource. \end{DoxyCompactList}\item 
+\hypertarget{classRenderUtil_abf53b2965107b8591da2ddc310317d50}{
+static \-Q\-Image \hyperlink{classRenderUtil_abf53b2965107b8591da2ddc310317d50}{system\-Icon} (\-Q\-String name)}
+\label{classRenderUtil_abf53b2965107b8591da2ddc310317d50}
+
+\begin{DoxyCompactList}\small\item\em \-A shortcut for builtin modules icon() method. \end{DoxyCompactList}\item 
+\hypertarget{classRenderUtil_a98ef2e5d1557bafdb59079fe536c75f7}{
+static void \hyperlink{classRenderUtil_a98ef2e5d1557bafdb59079fe536c75f7}{fill\-Image} (\-Q\-Image $\ast$img, const \-Q\-Color color=\-Q\-Color(0, 0, 0, 0))}
+\label{classRenderUtil_a98ef2e5d1557bafdb59079fe536c75f7}
+
+\begin{DoxyCompactList}\small\item\em \-Fill img with color, default is transparent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Utility class for drawing \-This class contains functions useful for drawing various parts for info widgets. 
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classRenderUtil_ad100ab8af0b6cb1287482cd2de9247b6}{
+\index{\-Render\-Util@{\-Render\-Util}!baseline@{baseline}}
+\index{baseline@{baseline}!RenderUtil@{\-Render\-Util}}
+\subsubsection[{baseline}]{\setlength{\rightskip}{0pt plus 5cm}int \-Render\-Util\-::baseline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRenderUtil_ad100ab8af0b6cb1287482cd2de9247b6}
+
+
+\-Gets y offset for the baseline of default font. 
+
+\begin{DoxyReturn}{\-Returns}
+pixel size of ascent part of the font 
+\end{DoxyReturn}
+\hypertarget{classRenderUtil_ac4e208597da2e9b3e0503af145d790d4}{
+\index{\-Render\-Util@{\-Render\-Util}!draw\-Icon@{draw\-Icon}}
+\index{draw\-Icon@{draw\-Icon}!RenderUtil@{\-Render\-Util}}
+\subsubsection[{draw\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Render\-Util\-::draw\-Icon (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{path, }
+\item[{\-Q\-Image $\ast$}]{image, }
+\item[{\-Q\-Point}]{point = {\ttfamily \-Q\-Point()}, }
+\item[{\-Q\-Size}]{size = {\ttfamily \-Q\-Size()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRenderUtil_ac4e208597da2e9b3e0503af145d790d4}
+
+
+\-Draws single icon on the image \-If point nor size are not specified image is drawn in point (0,0) with its 100\% size. 
+
+\begin{DoxyItemize}
+\item path \-Image to be drawn. \-Any format supported by \-Qt's \-Q\-Image will do \item image \-Pointer to the image \begin{DoxyReturn}{\-Returns}
+\-False if drawing failed 
+\end{DoxyReturn}
+\end{DoxyItemize}
+\hypertarget{classRenderUtil_a11d403be3b77b73f28d7cab242a34390}{
+\index{\-Render\-Util@{\-Render\-Util}!draw\-Icon@{draw\-Icon}}
+\index{draw\-Icon@{draw\-Icon}!RenderUtil@{\-Render\-Util}}
+\subsubsection[{draw\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Render\-Util\-::draw\-Icon (
+\begin{DoxyParamCaption}
+\item[{\-Q\-Image}]{icon, }
+\item[{\-Q\-Image $\ast$}]{image, }
+\item[{\-Q\-Point}]{point = {\ttfamily \-Q\-Point()}, }
+\item[{\-Q\-Size}]{size = {\ttfamily \-Q\-Size()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRenderUtil_a11d403be3b77b73f28d7cab242a34390}
+
+
+\-Draws single icon on the image \-If point nor size are not specified image is drawn in point (0,0) with its 100\% size. 
+
+\begin{DoxyItemize}
+\item icon \-Image to be drawn \item image \-Pointer to the image \begin{DoxyReturn}{\-Returns}
+\-False if drawing failed 
+\end{DoxyReturn}
+\end{DoxyItemize}
+\hypertarget{classRenderUtil_aff193438ccf137d2cb3abf8134a7a28e}{
+\index{\-Render\-Util@{\-Render\-Util}!parse\-Token@{parse\-Token}}
+\index{parse\-Token@{parse\-Token}!RenderUtil@{\-Render\-Util}}
+\subsubsection[{parse\-Token}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-String\-List \-Render\-Util\-::parse\-Token (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRenderUtil_aff193438ccf137d2cb3abf8134a7a28e}
+
+
+\-Parse a token and return a list of params. 
+
+\-This method is for the lazy ones (all of you) \begin{DoxyReturn}{\-Returns}
+\-An array of params. \-First param is prefix. 
+\end{DoxyReturn}
+\hypertarget{classRenderUtil_a6f6d1bc0464ea829801e01f178a965dc}{
+\index{\-Render\-Util@{\-Render\-Util}!resource@{resource}}
+\index{resource@{resource}!RenderUtil@{\-Render\-Util}}
+\subsubsection[{resource}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-String \-Render\-Util\-::resource (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRenderUtil_a6f6d1bc0464ea829801e01f178a965dc}
+
+
+\-Gets absolute path of a resource. 
+
+\-There are 2 paths in the program, installation path and user data path\par
+ \-The first one is usually in /opt/lpsmagic/icons\par
+ \-The second is /home/user/\-My\-Docs/lpsmagic\par
+ \-This function searches and finds resource trying to load from user dir first \begin{DoxyReturn}{\-Returns}
+the file or empty string 
+\end{DoxyReturn}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+renderutil.\-h\item 
+renderutil.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+<aegis>
+  <provide>
+    <credential name="control" />
+    <credential name="access" />
+    <dbus name="org.admiral0.lpsmagic" own="control" bus="system">
+      <node name="/">
+        <interface name="org.admiral0.lpsmagic">
+	    <method name="RestartSysuid">
+	      <annotation name="com.maemo.Aegis" value="access"/>
+	    </method>
+	    <method name="RestartLpsMagic">
+	      <annotation name="com.maemo.Aegis" value="access"/>
+	    </method>
+	    <method name="UpdateCss">
+	      <annotation name="com.maemo.Aegis" value="access"/>
+	    </method>
+	</interface>
+      </node>
+    </dbus>
+  </provide>
+  <request>
+    <credential name="control" />
+    <for path="/usr/bin/lpsdaemon" />
+  </request>
+  <request>
+    <request>
+    <credential name="access" />
+    <for path="/usr/bin/lpsmagic" />
+  </request>
+  </request>
+</aegis>

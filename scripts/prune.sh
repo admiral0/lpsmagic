@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/scratchbox/login -d $HOME/lpsmagic/build rm -rf *

@@ -1,0 +1,194 @@
+\hypertarget{classRendererManager}{
+\section{\-Renderer\-Manager \-Class \-Reference}
+\label{classRendererManager}\index{\-Renderer\-Manager@{\-Renderer\-Manager}}
+}
+
+
+\-Manages all renderers.  
+
+
+
+
+{\ttfamily \#include $<$renderermanager.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\-Q\-Image $\ast$ \hyperlink{classRendererManager_a0e1583d8e697750bde319965217516e1}{render\-Prefix} (\-Q\-String prefix, \-Q\-String draw\-Opts)
+\begin{DoxyCompactList}\small\item\em \-Renders a single prefix. \end{DoxyCompactList}\item 
+\-Q\-Image \hyperlink{classRendererManager_af6ac3aae69f06f316c933cea36a2023e}{render} ()
+\begin{DoxyCompactList}\small\item\em \-Render the image to be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRendererManager_ac924887f22b24c7625a9bc8e6bf0ab43}{
+static \hyperlink{classRendererManager}{\-Renderer\-Manager} $\ast$ \hyperlink{classRendererManager_ac924887f22b24c7625a9bc8e6bf0ab43}{instance} ()}
+\label{classRendererManager_ac924887f22b24c7625a9bc8e6bf0ab43}
+
+\begin{DoxyCompactList}\small\item\em \-Returns the instance for the class. \end{DoxyCompactList}\item 
+static bool \hyperlink{classRendererManager_a6b2ff8605201c19af0619790632195cc}{register\-Renderer} (\-Q\-String\-List prefixes, \hyperlink{classRenderer}{\-Renderer} $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em \-Registers a renderer in the program \-All renderers should call this. \end{DoxyCompactList}\item 
+static bool \hyperlink{classRendererManager_ae4d294c2d7a7e7e9e959aaf5dbe080a3}{register\-Renderer} (\-Q\-String prefix, \hyperlink{classRenderer}{\-Renderer} $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em \-Registers a renderer in the program. \end{DoxyCompactList}\item 
+\hypertarget{classRendererManager_a1125de78f39079a019c4240615a402a5}{
+static \-Q\-Font \hyperlink{classRendererManager_a1125de78f39079a019c4240615a402a5}{default\-Font} ()}
+\label{classRendererManager_a1125de78f39079a019c4240615a402a5}
+
+\begin{DoxyCompactList}\small\item\em \-The $<$class$>$\-Q\-Font$<$/class$>$ that should be used to paint text. \end{DoxyCompactList}\item 
+\hypertarget{classRendererManager_a81a7c68439fc4a558c537bda422a31f9}{
+static \-Q\-Color \hyperlink{classRendererManager_a81a7c68439fc4a558c537bda422a31f9}{foreground} ()}
+\label{classRendererManager_a81a7c68439fc4a558c537bda422a31f9}
+
+\begin{DoxyCompactList}\small\item\em \-Foreground color in the settings. \end{DoxyCompactList}\item 
+static \-Q\-Color \hyperlink{classRendererManager_ab84b4d4ac26799c820ead5385d36dc5b}{background} ()
+\begin{DoxyCompactList}\small\item\em \-Background color. \end{DoxyCompactList}\item 
+\hypertarget{classRendererManager_ae3ec1d6d336fc58b483b231b098bf640}{
+static bool \hyperlink{classRendererManager_ae3ec1d6d336fc58b483b231b098bf640}{tickless} ()}
+\label{classRendererManager_ae3ec1d6d336fc58b483b231b098bf640}
+
+\begin{DoxyCompactList}\small\item\em \-Setting for event driven updating. \end{DoxyCompactList}\item 
+\hypertarget{classRendererManager_a19ba613b59633b6d53b38cfd0ba01c30}{
+static int \hyperlink{classRendererManager_a19ba613b59633b6d53b38cfd0ba01c30}{horizontal\-Spacing} ()}
+\label{classRendererManager_a19ba613b59633b6d53b38cfd0ba01c30}
+
+\begin{DoxyCompactList}\small\item\em \-Gets user preference about icon spacing \-How many pixels should be between icon and content. \end{DoxyCompactList}\item 
+\hypertarget{classRendererManager_a9b0dc0d93b9b23682a4b514e71db24af}{
+static int \hyperlink{classRendererManager_a9b0dc0d93b9b23682a4b514e71db24af}{vertical\-Spacing} ()}
+\label{classRendererManager_a9b0dc0d93b9b23682a4b514e71db24af}
+
+\begin{DoxyCompactList}\small\item\em \-Gets horizontal spacing between items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Manages all renderers. 
+
+\-All renderers should be registered so the config tokens can be parsed and appropriate plugin can be called.\par
+ \-The tokens are in the form of\-:\par
+ \par
+\par
+{\ttfamily \%}\mbox{[}render\-Options\mbox{]}prefix\{arg1\}\{arg2\}\par
+\par
+ \-Render options can be these separated by \char`\"{}$|$\char`\"{}\-:
+\begin{DoxyItemize}
+\item position=x,y -\/$>$ \-Absolute positioning 
+\item margin=top,right,bottom,left -\/$>$ \-Margins 
+\begin{DoxyItemize}
+\end{DoxyItemize}\par
+\par
+ \-Arguments can be arrays (comma separated vars). \-There cannot be 0 arguments, but prefix\{\} is acceptable \begin{DoxyNote}{\-Note}
+\-This is a singleton class 
+\end{DoxyNote}
+
+\end{DoxyItemize}
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classRendererManager_ab84b4d4ac26799c820ead5385d36dc5b}{
+\index{\-Renderer\-Manager@{\-Renderer\-Manager}!background@{background}}
+\index{background@{background}!RendererManager@{\-Renderer\-Manager}}
+\subsubsection[{background}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Color \-Renderer\-Manager\-::background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRendererManager_ab84b4d4ac26799c820ead5385d36dc5b}
+
+
+\-Background color. 
+
+\begin{DoxyNote}{\-Note}
+\-Transparent background is the best choice 
+\end{DoxyNote}
+\hypertarget{classRendererManager_a6b2ff8605201c19af0619790632195cc}{
+\index{\-Renderer\-Manager@{\-Renderer\-Manager}!register\-Renderer@{register\-Renderer}}
+\index{register\-Renderer@{register\-Renderer}!RendererManager@{\-Renderer\-Manager}}
+\subsubsection[{register\-Renderer}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Renderer\-Manager\-::register\-Renderer (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String\-List}]{prefixes, }
+\item[{{\bf \-Renderer} $\ast$}]{renderer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRendererManager_a6b2ff8605201c19af0619790632195cc}
+
+
+\-Registers a renderer in the program \-All renderers should call this. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em prefixes} & \-The strings that the plugin interprets. \\
+\hline
+{\em renderer} & \-An instance of the renderer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-False if any prefix is already registered 
+\end{DoxyReturn}
+\hypertarget{classRendererManager_ae4d294c2d7a7e7e9e959aaf5dbe080a3}{
+\index{\-Renderer\-Manager@{\-Renderer\-Manager}!register\-Renderer@{register\-Renderer}}
+\index{register\-Renderer@{register\-Renderer}!RendererManager@{\-Renderer\-Manager}}
+\subsubsection[{register\-Renderer}]{\setlength{\rightskip}{0pt plus 5cm}bool \-Renderer\-Manager\-::register\-Renderer (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{prefix, }
+\item[{{\bf \-Renderer} $\ast$}]{renderer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classRendererManager_ae4d294c2d7a7e7e9e959aaf5dbe080a3}
+
+
+\-Registers a renderer in the program. 
+
+\-All renderers should call this in init() 
+\begin{DoxyParams}{\-Parameters}
+{\em prefix} & \-The string that the plugin interprets. \\
+\hline
+{\em renderer} & \-An instance of the renderer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-False if any prefix is already registered 
+\end{DoxyReturn}
+\hypertarget{classRendererManager_af6ac3aae69f06f316c933cea36a2023e}{
+\index{\-Renderer\-Manager@{\-Renderer\-Manager}!render@{render}}
+\index{render@{render}!RendererManager@{\-Renderer\-Manager}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Image \-Renderer\-Manager\-::render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classRendererManager_af6ac3aae69f06f316c933cea36a2023e}
+
+
+\-Render the image to be displayed. 
+
+\-The various lines are parsed and printed onto the image all tokens are composited into the image.\par
+ \-There are 2 \char`\"{}fake\char`\"{} renderers\-:
+\begin{DoxyItemize}
+\item \%newline\{\} 
+\item \%spacer\{pixels\} 
+\end{DoxyItemize}\begin{DoxyNote}{\-Note}
+\-This function can be used to generate previews. 
+\end{DoxyNote}
+\hypertarget{classRendererManager_a0e1583d8e697750bde319965217516e1}{
+\index{\-Renderer\-Manager@{\-Renderer\-Manager}!render\-Prefix@{render\-Prefix}}
+\index{render\-Prefix@{render\-Prefix}!RendererManager@{\-Renderer\-Manager}}
+\subsubsection[{render\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}\-Q\-Image $\ast$ \-Renderer\-Manager\-::render\-Prefix (
+\begin{DoxyParamCaption}
+\item[{\-Q\-String}]{prefix, }
+\item[{\-Q\-String}]{draw\-Opts}
+\end{DoxyParamCaption}
+)}}
+\label{classRendererManager_a0e1583d8e697750bde319965217516e1}
+
+
+\-Renders a single prefix. 
+
+\-Can be called from other renderers for rendering content. \begin{DoxyItemize}
+\item prefix \-Prefix name \item drawopts \-Arguments in the form of \{arg1\}\{arg2\} or \{\} if empty \begin{DoxyReturn}{\-Returns}
+rendered image 
+\end{DoxyReturn}
+\end{DoxyItemize}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+renderermanager.\-h\item 
+renderermanager.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cp /usr/share/themes/base/meegotouch/libsysuid-screenlock-nokia/style/libsysuid-screenlock-nokia.css /opt/lpsmagic/backup
+
