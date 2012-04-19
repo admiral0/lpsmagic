@@ -42,6 +42,8 @@ private:
     QString prefix;
     QStringList args;
     QStringList renderargs;
+    //check tokens
+    bool tokenFail;
     bool centered;
     //Info in image is still valid? 
     bool valid;

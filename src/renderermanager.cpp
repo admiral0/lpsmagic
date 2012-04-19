@@ -156,7 +156,7 @@ QImage RendererManager::render()
     tokenRegex.setMinimal(true);
     tokenRegex.setPattern("(%(\\[.*\\])?([A-Za-z]*)(\\{.*\\}))");
     
-    QString formatString=settings->value("formatString"," %batIcon{} %batPercent{} %icon{calendar.png} %date{} %newline{} %batCurrent{}").toString();
+    QString formatString=settings->value("formatString"," %batIcon{} %batPercent{} %icon{calendar.png} %date{} %newline{} %batIcon{}").toString();
     settings->sync();
     qDebug()<<"STATUS"<<settings->status();
     //Initialize variables

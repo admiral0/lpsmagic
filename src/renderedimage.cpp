@@ -19,24 +19,28 @@
 #include "renderedimage.h"
 #include "renderermanager.h"
 #include "renderutil.h"
+#include <QDebug>
+#include <QPainter>
 
 RenderedImage::RenderedImage(QString token)
 {
     image=new QImage;
+    tokenFail=true;
     QRegExp tokenRegex;
     tokenRegex.setPatternSyntax(QRegExp::RegExp2);
-    tokenRegex.setMinimal(true);
-    tokenRegex.setPattern("%\\[(.*)\\]?([A-Za-z]*)\\{(.*)\\}");
+    //tokenRegex.setPattern("%\\[(.*)\\]?([A-Za-z]*)\\{(.*)\\}");
+    tokenRegex.setPattern("%(\\[(.*)\\])?([A-Za-z]*)\\{(.*)\\}");
     int found=tokenRegex.indexIn(token);
     if(found==-1){
       valid=false;
       this->token=token;
       return;
     }
+    tokenFail=false;
     this->token=token;
-    this->args=tokenRegex.cap(3).split("}{");
+    this->args=tokenRegex.cap(4).split("}{");
     QString renderargslist=tokenRegex.cap(2);
-    this->prefix=tokenRegex.cap(1);
+    this->prefix=tokenRegex.cap(3);
     renderargs=renderargslist.split(',');
     foreach(QString arg, renderargs){
       if(arg=="important"){
@@ -90,8 +94,11 @@ bool RenderedImage::operator==(const RenderedImage& other) const
 
 void RenderedImage::update()
 {
+  if(tokenFail)
+    return;
   delete image;
   image=RendererManager::instance()->renderPrefix(prefix,args);
+  qDebug()<<"FAIL @ "<<token<<" "<<prefix<<args;
 }
 
 void RenderedImage::invalidatePrefix(QString prefix)
