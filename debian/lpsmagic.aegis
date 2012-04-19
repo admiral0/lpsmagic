@@ -23,9 +23,7 @@
     <for path="/usr/bin/lpsdaemon" />
   </request>
   <request>
-    <request>
     <credential name="access" />
     <for path="/usr/bin/lpsmagic" />
-  </request>
   </request>
 </aegis>
