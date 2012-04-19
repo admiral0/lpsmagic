@@ -2,3 +2,4 @@ build
 build-stamp
 configure-stamp
 debian/lpsmagic
+scripts/*.deb
