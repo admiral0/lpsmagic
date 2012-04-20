@@ -42,7 +42,7 @@ LpsMagic::LpsMagic (int& argc, char** argv) : QApplication (argc, argv)
       dbus->UpdateCss();
       dbus->RestartSysuid();
     }
-    settings=new QSettings(CONFIG_FILE);
+    settings=new QSettings(CONFIG_FILE,QSettings::IniFormat);
     ticker.open(MeeGo::QmHeartbeat::SignalNeeded);
     connect(&ticker,SIGNAL(wakeUp(QTime)),this,SLOT(render()));
     connect(&displaystate,SIGNAL(displayStateChanged(MeeGo::QmDisplayState::DisplayState)),SLOT(displayStateChanged(MeeGo::QmDisplayState::DisplayState)));

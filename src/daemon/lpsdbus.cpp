@@ -30,6 +30,7 @@ void LpsDbus::RestartLpsMagic()
   child.terminate();
   child.waitForFinished(2000);
   if(child.state()==QProcess::Running){
+    //Here something fails... Probably aegis....
     child.kill();
   }
   child.start("aegis-exec",QStringList()<<"-u"<<"user"<<"/usr/bin/lpsmagic");

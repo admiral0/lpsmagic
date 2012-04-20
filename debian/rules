@@ -33,12 +33,12 @@ build-stamp: configure-stamp
 	#docbook-to-man debian/myprogram.sgml > myprogram.1
 	touch $@
 
-clean: 
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp configure-stamp
 	# Add here commands to clean up after the build process.
-	cd build && $(MAKE) clean
+	rm -rf build/*
 	dh_clean 
 
 install: build
