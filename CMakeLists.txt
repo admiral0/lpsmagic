@@ -7,6 +7,7 @@ include(FindPkgConfig)
 find_package(Qt4 4.7.3 REQUIRED QtCore )
 pkg_check_modules(GCONF REQUIRED gconf-2.0)
 pkg_check_modules(QMSYSTEM REQUIRED qmsystem2)
+pkg_check_modules(PCRE REQUIRED libpcrecpp)
 
 add_subdirectory(src)
 add_subdirectory(data)

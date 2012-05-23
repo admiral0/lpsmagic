@@ -25,6 +25,7 @@ extern "C" {
 #include <math.h>
 }
 #include <QFile>
+#include <pcrecpp.h>
 
 class LpsDbus : public QObject
 {

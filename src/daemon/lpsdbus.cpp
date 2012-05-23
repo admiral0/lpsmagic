@@ -18,6 +18,9 @@
 
 #include "lpsdbus.h"
 #include <QSettings>
+#include <QIODevice>
+#include <QString>
+#include <QFile>
 
 
 LpsDbus::LpsDbus(): QObject()
@@ -43,25 +46,27 @@ void LpsDbus::RestartSysuid()
 
 void LpsDbus::UpdateCss()
 {
+    pcrecpp::RE monster("(LockScreen\\s+?MImageWidgetStyle#LockScreenLowPowerModeOperatorLogo\\s*{\\s(.*?\n)*?\\s*?maximum-size\\s*?:\\s*?)\\S+?mm\\s+?\\S+?mm(.*?\n)");
     QSettings settings("/home/user/.lpsmagic");
-    QFile css("/opt/lpsmagic/magiccss");
+    QFile css("/usr/share/themes/base/meegotouch/libsysuid-screenlock-nokia/style/libsysuid-screenlock-nokia.css");
     css.open(QIODevice::ReadOnly);
-    QFile out("/usr/share/themes/base/meegotouch/libsysuid-screenlock-nokia/style/libsysuid-screenlock-nokia.css");
-    out.open(QIODevice::WriteOnly);
     if(!css.exists())
       return;
     //I'm sorry guys
     QString in=css.readAll();
     css.close();
+    css.open(QIODevice::WriteOnly);
+    
     int h=settings.value("LowPowerScreen/ImageHeight",100).toInt();
     int w=settings.value("LowPowerScreen/ImageWidth",450).toInt();
     h=int(floor(h/10.0));
     w=int(floor(w/10.0));
-    in.replace("%IMAGEHEIGHT%",QString("%1").arg(h));
-    in.replace("%IMAGEWIDTH%",QString("%1").arg(w));
-    //TODO:Other settings? Like position
-    out.write(in.toStdString().c_str());
-    out.close();
+    QString out=QString("\\1")+QString("%1mm ").arg(w)+QString("%1mm\\2");
+    //I'm even more sorry
+    string s=in.toStdString();
+    monster.Replace(out.toStdString(),&s);
+    css.write(s.c_str());
+    css.close();
 }
 LpsDbus::~LpsDbus()
 {
