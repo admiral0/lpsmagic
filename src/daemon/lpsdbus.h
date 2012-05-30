@@ -25,7 +25,7 @@ extern "C" {
 #include <math.h>
 }
 #include <QFile>
-#include <pcrecpp.h>
+#include <QString>
 
 class LpsDbus : public QObject
 {
@@ -34,7 +34,7 @@ public:
     LpsDbus();
     virtual ~LpsDbus();
 public slots:
-    void RestartLpsMagic();
+    QString Ping();
     void RestartSysuid();
     void UpdateCss();
 private:

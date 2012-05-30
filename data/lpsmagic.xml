@@ -3,7 +3,8 @@
   <interface name="org.admiral0.lpsmagic">
     <method name="RestartSysuid">
     </method>
-    <method name="RestartLpsMagic">
+    <method name="Ping">
+      <arg type="s" direction="out"/>
     </method>
     <method name="UpdateCss">
     </method>

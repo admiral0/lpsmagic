@@ -21,23 +21,45 @@
 #include <QIODevice>
 #include <QString>
 #include <QFile>
+#include <QRegExp>
+#include <QString>
+#include <iostream>
 
 
 LpsDbus::LpsDbus(): QObject()
 {
-  child.start("aegis-exec",QStringList()<<"-u"<<"user"<<"/usr/bin/lpsmagic");
+    QRegExp monster("LockScreen\\s+MImageWidgetStyle#LockScreenLowPowerModeOperatorLogo\\s*\\{.*\\s*maximum-size\\s*:\\s*(.+)mm\\s+(.+)mm\\s*;");
+    monster.setMinimal(true);
+    monster.setPatternSyntax(QRegExp::RegExp2);
+    QSettings settings("/home/user/.lpsmagic");
+    QFile css("/usr/share/themes/base/meegotouch/libsysuid-screenlock-nokia/style/libsysuid-screenlock-nokia.css");
+    css.open(QIODevice::ReadOnly);
+    if(!css.exists())
+      return;
+    //I'm sorry guys
+    QString in=css.readAll();
+    css.close();
+    int pos=monster.indexIn(in);
+    if(pos==-1){
+      std::cout << "Error: QRegExp2 didn't match. Something is really wrong....";
+    }else{
+      int h=settings.value("LowPowerScreen/ImageHeight",100).toInt();
+      int w=settings.value("LowPowerScreen/ImageWidth",450).toInt();
+      h=int(floor(h/10.0));
+      w=int(floor(w/10.0));
+      if(! (w==monster.cap(1).toInt() || h==monster.cap(1).toInt())){
+	UpdateCss();
+	RestartSysuid();
+      }
+    };
 }
 
-void LpsDbus::RestartLpsMagic()
+QString LpsDbus::Ping()
 {
-  child.terminate();
-  child.waitForFinished(2000);
-  if(child.state()==QProcess::Running){
-    //Here something fails... Probably aegis....
-    child.kill();
-  }
-  child.start("aegis-exec",QStringList()<<"-u"<<"user"<<"/usr/bin/lpsmagic");
+  return QString("pong");
 }
+
+
 void LpsDbus::RestartSysuid()
 {
 
@@ -46,7 +68,9 @@ void LpsDbus::RestartSysuid()
 
 void LpsDbus::UpdateCss()
 {
-    pcrecpp::RE monster("(LockScreen\\s+?MImageWidgetStyle#LockScreenLowPowerModeOperatorLogo\\s*{\\s(.*?\n)*?\\s*?maximum-size\\s*?:\\s*?)\\S+?mm\\s+?\\S+?mm(.*?\n)");
+    QRegExp monster("(LockScreen\\s+MImageWidgetStyle#LockScreenLowPowerModeOperatorLogo\\s*\\{.*\\s*maximum-size\\s*:\\s*).+mm\\s+.+mm(\\s*;)");
+    monster.setMinimal(true);
+    monster.setPatternSyntax(QRegExp::RegExp2);
     QSettings settings("/home/user/.lpsmagic");
     QFile css("/usr/share/themes/base/meegotouch/libsysuid-screenlock-nokia/style/libsysuid-screenlock-nokia.css");
     css.open(QIODevice::ReadOnly);
@@ -61,11 +85,10 @@ void LpsDbus::UpdateCss()
     int w=settings.value("LowPowerScreen/ImageWidth",450).toInt();
     h=int(floor(h/10.0));
     w=int(floor(w/10.0));
-    QString out=QString("\\1")+QString("%1mm ").arg(w)+QString("%1mm\\2");
     //I'm even more sorry
-    string s=in.toStdString();
-    monster.Replace(out.toStdString(),&s);
-    css.write(s.c_str());
+    QString out("\\1%1mm %2mm\\2");
+    out=out.arg(w).arg(h);
+    css.write(in.replace(monster,out).toAscii());
     css.close();
 }
 LpsDbus::~LpsDbus()
