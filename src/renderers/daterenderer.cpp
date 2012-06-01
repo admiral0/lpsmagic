@@ -19,10 +19,10 @@
 #include "daterenderer.h"
 #include "../renderutil.h"
 #include "../renderermanager.h"
+#include "qxtlogger.h"
 #include <QImage>
 #include <QPainter>
 #include <QDate>
-#include <QDebug>
 #include <QColormap>
 #include <QLocale>
 
@@ -77,7 +77,7 @@ QImage* DateRenderer::render (QString prefix)
     p.setPen(RendererManager::foreground());
     p.setFont(RendererManager::defaultFont());
     p.drawText(0,RenderUtil::baseline(),text);
-    qDebug()<<"DATE"<<text;
+    qxtLog->info(QString("Date rendered is %1").arg(text));
     return i;
 }
 
@@ -90,7 +90,6 @@ void DateRenderer::init()
 QString DateRenderer::localeFormat()
 {
   QLocale locale;
-  qDebug()<<"LOCALE DATE"<<locale.dateFormat(QLocale::ShortFormat);;
   return locale.dateFormat(QLocale::ShortFormat);
 }
 

@@ -1,3 +1,11 @@
+lpsmagic (1.81) UNRELEASED; urgency=low
+
+  * Prealpha 1
+  * added qxtcore
+  * 2 daemons now
+
+ -- admiral0 <admiral0@chakra-project.org>  Fri, 01 Jun 2012 13:32:25 +0200
+
 lpsmagic (1.80) UNRELEASED; urgency=low
 
   * Initial release.

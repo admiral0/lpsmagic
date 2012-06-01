@@ -106,5 +106,7 @@ set(QXTCORE_HDRS qxtabstractconnectionmanager.h
     qxttypelist.h
     qxtxmlfileloggerengine.h)
 
-qt_wrap_cpp(QXTCORE_MOC ${QXTCORE_HDRS})
-add_library(qxtcore STATIC ${QXTCORE_MOC} ${QXTCORE_SRCS})
+qt4_wrap_cpp(QXTCORE_MOC ${QXTCORE_HDRS})
+add_library(qxtcore SHARED ${QXTCORE_MOC} ${QXTCORE_SRCS})
+target_link_libraries(qxtcore ${QT_CORE_LIBRARY})
+install(TARGETS qxtcore DESTINATION /usr/lib)

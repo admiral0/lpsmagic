@@ -19,8 +19,8 @@
 #include "batteryrenderer.h"
 #include "../renderermanager.h"
 #include "../renderutil.h"
+#include "qxtlogger.h"
 #include <QPainter>
-#include <QDebug>
 #include <QString>
 #include <QDate>
 
@@ -64,8 +64,8 @@ QImage* BatteryRenderer::render (QString prefix)
 {
     QStringList tokens=RenderUtil::parseToken(prefix);
     QString pref=tokens.at(0);
+    qxtLog->info(QString("Will render in battery plugin prefix: %1").arg(pref));
     if(pref=="batIcon"){
-      qDebug()<<"batIcon Detected";
       batIcon();
     }else if(pref=="batCapacity"){
       batCapacity(tokens.at(1));
@@ -161,7 +161,6 @@ void BatteryRenderer::batPercent(QString suffix)
   int current=battery->getRemainingCapacityPct();
   QString cap("%1%2");
   cap=cap.arg(current).arg(suffix);
-  qDebug()<<cap;
   int iw=RenderUtil::expectedTextWidth(cap);
   out=RendererManager::instance()->renderPrefix("dumbtext",QString("{")+cap+"}");
 }

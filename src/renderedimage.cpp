@@ -19,7 +19,7 @@
 #include "renderedimage.h"
 #include "renderermanager.h"
 #include "renderutil.h"
-#include <QDebug>
+#include "qxtlogger.h"
 #include <QPainter>
 
 RenderedImage::RenderedImage(QString token)
@@ -98,7 +98,8 @@ void RenderedImage::update()
     return;
   delete image;
   image=RendererManager::instance()->renderPrefix(prefix,args);
-  qDebug()<<"FAIL @ "<<token<<" "<<prefix<<args;
+  qxtLog->info(QString("Updated %1 with args [%2].v ").arg(prefix).arg(args.join(",")));
+  
 }
 
 void RenderedImage::invalidatePrefix(QString prefix)

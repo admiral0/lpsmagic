@@ -25,7 +25,7 @@
 #include <QPainter>
 #include <QBrush>
 #include <QRegExp>
-#include <QDebug>
+#include "qxtlogger.h"
 #include "lpsmagic.h"
 #include "renderer.h"
 #include "renderutil.h"
@@ -158,7 +158,6 @@ QImage RendererManager::render()
     
     QString formatString=settings->value("formatString"," %batIcon{} %batPercent{} %icon{calendar.png} %date{} %newline{} %batIcon{}").toString();
     settings->sync();
-    qDebug()<<"STATUS"<<settings->status();
     //Initialize variables
     int x=0; //current drawing pointer
     int y=0; //
@@ -172,14 +171,14 @@ QImage RendererManager::render()
     painter.fillRect(0,0,w,h,background());
     painter.setBrush(QBrush(background()));
     painter.setPen(QPen(foreground()));
-    qDebug()<<formatString;
+    qxtLog->info(QString("Rendering format string %1").arg(formatString));
     int pos=0;
     while((pos = tokenRegex.indexIn(formatString,pos)) != -1){
 	QString token=tokenRegex.cap(1);
         QString prefix=tokenRegex.cap(3);
         QString renderOpts=tokenRegex.cap(2);
         QString drawOpts=tokenRegex.cap(4);
-        qDebug()<<"Rendering token %"<<renderOpts<<prefix<<drawOpts;
+        qxtLog->info(QString("Rendering token %1 with options %2 and renderhints %3").arg(prefix).arg(renderOpts).arg(drawOpts));
         if(prefix=="newline"){
             x=0;
             y+=lh;

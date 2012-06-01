@@ -20,7 +20,6 @@
 #include "../renderutil.h"
 #include <QStringList>
 #include <QPainter>
-#include <QDebug>
 
 
 void IconRenderer::init()
@@ -46,7 +45,6 @@ QImage* IconRenderer::render(QString prefix)
       ox=(img->size().width()-pimg.size().width())/2;
       oy=(img->size().height()-pimg.size().height())/2;
     }
-    qDebug()<<img->size()<<pimg.size()<<ox<<oy;
     p.drawImage(ox,oy,pimg);
     return img;
 }

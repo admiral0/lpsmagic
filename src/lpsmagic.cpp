@@ -22,21 +22,25 @@
 #include <QDebug>
 #include <iostream>
 #include <glib-object.h>
+#include "qxtlogger.h"
+#include "qxtbasicstdloggerengine.h"
 
 #define CONFIG_FILE "/home/user/.lpsmagic"
 #define USER_CONFIG_FILE "/home/user/MyDocs/lpsmagic.conf"
 using namespace std;
 LpsMagic::LpsMagic (int& argc, char** argv) : QApplication (argc, argv)
 {
+    qxtLog->info("Logging started");
     dbus=new OrgAdmiral0LpsmagicInterface("org.admiral0.lpsmagic","/",QDBusConnection::systemBus());
     oneshot=false;
     
     if(!QFile(CONFIG_FILE).exists()){
-      
+      qxtLog->info("Creating config file ",CONFIG_FILE);
       QFile::copy("/opt/lpsmagic/lpsmagicconf.example",CONFIG_FILE);
       dbus->UpdateCss();
       dbus->RestartSysuid();
     }else if(QFile(USER_CONFIG_FILE).exists()){
+      qxtLog->info("Moving config file from ",USER_CONFIG_FILE," to ",CONFIG_FILE);
       QFile::copy(USER_CONFIG_FILE,CONFIG_FILE);
       QFile::remove(USER_CONFIG_FILE);
       dbus->UpdateCss();
@@ -47,6 +51,7 @@ LpsMagic::LpsMagic (int& argc, char** argv) : QApplication (argc, argv)
     connect(&ticker,SIGNAL(wakeUp(QTime)),this,SLOT(render()));
     connect(&displaystate,SIGNAL(displayStateChanged(MeeGo::QmDisplayState::DisplayState)),SLOT(displayStateChanged(MeeGo::QmDisplayState::DisplayState)));
     if(arguments().contains("-demo")){
+	qxtLog->info("It's a oneshot call.");
         renderFile();
         oneshot=true;
     }else if(arguments().contains("--help") || arguments().contains("-h")){
@@ -111,7 +116,7 @@ void LpsMagic::renderFile()
       settings->sync();
     }
     QImage img= RendererManager::instance()->render();
-    qDebug()<<img.isNull();
+    qxtLog->info("Image is null? ",img.isNull());
     img.save("demo.png","PNG");
 }
 
